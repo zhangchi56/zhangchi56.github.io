@@ -627,7 +627,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">380</span>&nbsp;字
+                class="white-color">614</span>&nbsp;字
             
             
             
@@ -766,6 +766,13 @@ $(function () {
     <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
     <script type="text/javascript" src="/js/fireworks.js"></script>
     <script src="/js/snow.js"></script>
+    <script src="/js/cursor.js"></script>
+    <script type="text/javascript">
+      var OriginTitile=document.title,st;
+      document.addEventListener("visibilitychange",function(){
+          document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+      })
+  </script>
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
 

@@ -364,14 +364,14 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">2</a></span>
+    <span class="count"><a href="/categories">3</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">5</a></span>
+    <span class="count"><a href="/tags">4</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -394,14 +394,14 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">2</a></span>
+    <span class="count"><a href="/categories">3</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">5</a></span>
+    <span class="count"><a href="/tags">4</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -579,7 +579,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"性能优化","value":1},{"name":"hexo","value":1}],
+                data: [{"name":"Hexo","value":1},{"name":"Vue","value":1},{"name":"性能优化","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -603,7 +603,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["前端","JavaScript","性能优化","hexo","建站"]
+                data: ["Web","Vue","Hexo","建站"]
             }
         ],
         yAxis: [
@@ -616,7 +616,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [1,1,1,1,1],
+                data: [2,2,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -806,22 +806,8 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                <span class="chip center-align waves-effect waves-light chip-default">前端</span>
-            </a>
-            
-            
-            
-            
-            
-            <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
-                <span class="chip center-align waves-effect waves-light chip-default">性能优化</span>
-            </a>
-            
-            
-            
-            <a href="/tags/hexo/">
-                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
+            <a href="/tags/Hexo/">
+                <span class="chip center-align waves-effect waves-light chip-default">Hexo</span>
             </a>
             
             
@@ -829,6 +815,14 @@
             <a href="/tags/%E5%BB%BA%E7%AB%99/">
                 <span class="chip center-align waves-effect waves-light chip-default">建站</span>
             </a>
+            
+            
+            
+            <a href="/tags/Web/">
+                <span class="chip center-align waves-effect waves-light chip-default">Web</span>
+            </a>
+            
+            
             
             
         </div>
@@ -930,7 +924,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">380</span>&nbsp;字
+                class="white-color">614</span>&nbsp;字
             
             
             
@@ -1069,6 +1063,13 @@ $(function () {
     <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
     <script type="text/javascript" src="/js/fireworks.js"></script>
     <script src="/js/snow.js"></script>
+    <script src="/js/cursor.js"></script>
+    <script type="text/javascript">
+      var OriginTitile=document.title,st;
+      document.addEventListener("visibilitychange",function(){
+          document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+      })
+  </script>
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
 

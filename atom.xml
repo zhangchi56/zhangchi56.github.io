@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/child/"/>
-  <updated>2020-02-22T00:43:52.140Z</updated>
+  <updated>2020-02-22T04:38:47.643Z</updated>
   <id>http://yoursite.com/child/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>防抖和节流</title>
-    <link href="http://yoursite.com/child/2020/02/22/fang-dou-he-jie-liu/"/>
-    <id>http://yoursite.com/child/2020/02/22/fang-dou-he-jie-liu/</id>
-    <published>2020-02-22T00:08:37.721Z</published>
-    <updated>2020-02-22T00:43:52.140Z</updated>
+    <title>vue中watch原理</title>
+    <link href="http://yoursite.com/child/2020/02/22/vue-watch/"/>
+    <id>http://yoursite.com/child/2020/02/22/vue-watch/</id>
+    <published>2020-02-22T04:25:48.434Z</published>
+    <updated>2020-02-22T04:38:47.643Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,36 @@
       
         
         
-          &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;防抖&quot;&gt;&lt;a href=&quot;#防抖&quot;
+          &lt;h2 id=&quot;vue中watch原理&quot;&gt;&lt;a href=&quot;#vue中watch原理&quot; class=&quot;headerlink&quot; title=&quot;vue中watch原理&quot;&gt;&lt;/a&gt;vue中watch原理&lt;/h2&gt;&lt;h3 id=&quot;普通的watch&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://yoursite.com/child/categories/Vue/"/>
+    
+    
+      <category term="Web" scheme="http://yoursite.com/child/tags/Web/"/>
+    
+      <category term="Vue" scheme="http://yoursite.com/child/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>防抖和节流</title>
+    <link href="http://yoursite.com/child/2020/02/22/fang-dou-he-jie-liu/"/>
+    <id>http://yoursite.com/child/2020/02/22/fang-dou-he-jie-liu/</id>
+    <published>2020-02-22T00:08:37.721Z</published>
+    <updated>2020-02-22T04:31:13.453Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;防抖和节流&quot;&gt;&lt;a href=&quot;#防抖和节流&quot; class=&quot;headerlink&quot; title=&quot;防抖和节流&quot;&gt;&lt;/a&gt;防抖和节流&lt;/h2&gt;&lt;h3 id=&quot;防抖&quot;&gt;&lt;a href=&quot;#防抖&quot; class=&quot;headerlink&quot;
         
       
     
@@ -39,11 +68,9 @@
       <category term="性能优化" scheme="http://yoursite.com/child/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
     
-      <category term="前端" scheme="http://yoursite.com/child/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="Web" scheme="http://yoursite.com/child/tags/Web/"/>
     
-      <category term="JavaScript" scheme="http://yoursite.com/child/tags/JavaScript/"/>
-    
-      <category term="性能优化" scheme="http://yoursite.com/child/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+      <category term="Vue" scheme="http://yoursite.com/child/tags/Vue/"/>
     
   </entry>
   
@@ -52,7 +79,7 @@
     <link href="http://yoursite.com/child/2020/02/22/my-first-world/"/>
     <id>http://yoursite.com/child/2020/02/22/my-first-world/</id>
     <published>2020-02-21T18:39:23.313Z</published>
-    <updated>2020-02-22T00:18:28.299Z</updated>
+    <updated>2020-02-22T04:28:02.636Z</updated>
     
     <summary type="html">
     
@@ -71,35 +98,12 @@
     </summary>
     
     
-      <category term="hexo" scheme="http://yoursite.com/child/categories/hexo/"/>
+      <category term="Hexo" scheme="http://yoursite.com/child/categories/Hexo/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/child/tags/hexo/"/>
+      <category term="Hexo" scheme="http://yoursite.com/child/tags/Hexo/"/>
     
       <category term="建站" scheme="http://yoursite.com/child/tags/%E5%BB%BA%E7%AB%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/child/2020/02/21/hello-world/"/>
-    <id>http://yoursite.com/child/2020/02/21/hello-world/</id>
-    <published>2020-02-21T08:24:01.707Z</published>
-    <updated>2020-02-22T00:45:20.115Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
