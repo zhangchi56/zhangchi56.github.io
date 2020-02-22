@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>防抖和节流</title>
+      <link href="/2020/02/23/fang-dou-he-jie-liu/"/>
+      <url>/2020/02/23/fang-dou-he-jie-liu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h2><h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><blockquote><p>函数防抖函数的防抖就是函数需要频繁触发情况时候，只有足够空闲的时间，才执行一次<br>例如：实时搜索、拖拽中</p></blockquote><pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> debounce<span class="token punctuation">(</span>func, delay<span class="token punctuation">)</span> <span class="token punctuation">{</span>      <span class="token keyword">let</span> timer <span class="token operator">=</span> null<span class="token punctuation">;</span>      <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> clearTimeout<span class="token punctuation">(</span>timer<span class="token punctuation">)</span> timer <span class="token operator">=</span> setTimeout<span class="token punctuation">((</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>          func.apply<span class="token punctuation">(</span>this, arguments<span class="token punctuation">)</span>        <span class="token punctuation">}</span>, delay<span class="token punctuation">)</span>      <span class="token punctuation">}</span>    <span class="token punctuation">}</span></code></pre><h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><blockquote><p>函数节流就是预定一个函数只有在大于等于执行周期时候才会执行，周期内调用不执行<br>例如：窗口调整、页面滚动、购物疯狂点击</p></blockquote><pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> throttle<span class="token punctuation">(</span>func, wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>      var lastTime <span class="token operator">=</span> 0<span class="token punctuation">;</span>      <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token punctuation">{</span>        var nowTime <span class="token operator">=</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span>.getTime<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>nowTime - lastTime <span class="token operator">></span> wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>          func.apply<span class="token punctuation">(</span>this, arguments<span class="token punctuation">)</span> lastTime <span class="token operator">=</span> nowTime        <span class="token punctuation">}</span>      <span class="token punctuation">}</span>    <span class="token punctuation">}</span></code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 性能优化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue中watch原理</title>
+      <link href="/2020/02/23/vue-watch/"/>
+      <url>/2020/02/23/vue-watch/</url>
+      
+        <content type="html"><![CDATA[<h2 id="vue中watch原理"><a href="#vue中watch原理" class="headerlink" title="vue中watch原理"></a>vue中watch原理</h2><h3 id="普通的watch"><a href="#普通的watch" class="headerlink" title="普通的watch"></a>普通的watch</h3><pre class=" language-bash"><code class="language-bash">data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token keyword">return</span> <span class="token punctuation">{</span>    frontPoints: 0  <span class="token punctuation">}</span><span class="token punctuation">}</span>,watch: <span class="token punctuation">{</span>  frontPoints<span class="token punctuation">(</span>newValue,oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>    console.log<span class="token punctuation">(</span>newValue<span class="token punctuation">)</span>  <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><h3 id="对象属性的watch"><a href="#对象属性的watch" class="headerlink" title="对象属性的watch"></a>对象属性的watch</h3><blockquote><p>对象和数组都是引用类型，引用类型变量存的是地址，地址没有变，所以不会触发watch。这时我们需要进行深度监听，就需要加上一个属性 deep，值为 true</p></blockquote><pre class=" language-bash"><code class="language-bash">data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token keyword">return</span> <span class="token punctuation">{</span>    bet: <span class="token punctuation">{</span>      pokerState: 53,      pokerHistory: <span class="token string">'local'</span>    <span class="token punctuation">}</span>  <span class="token punctuation">}</span><span class="token punctuation">}</span>,watch: <span class="token punctuation">{</span>  bet: <span class="token punctuation">{</span>    handle<span class="token punctuation">(</span>newValue, oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>      console.log<span class="token punctuation">(</span>newValue<span class="token punctuation">)</span>    <span class="token punctuation">}</span>  <span class="token punctuation">}</span>,  deep: <span class="token boolean">true</span><span class="token punctuation">}</span></code></pre><blockquote><p>注意：只要对象的属性发生变化，就会执行handler函数；如果将监听对象中的具体属性，则可以通过计算属性computed作为中间层进行监听，例如：</p></blockquote><pre class=" language-bash"><code class="language-bash">data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token keyword">return</span> <span class="token punctuation">{</span>    bet: <span class="token punctuation">{</span>      pokerState: 53,      pokerHistory: <span class="token string">'local'</span>    <span class="token punctuation">}</span>  <span class="token punctuation">}</span><span class="token punctuation">}</span>,computed: <span class="token punctuation">{</span>  pokerHistory<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">return</span> this.bet.pokerHistory  <span class="token punctuation">}</span><span class="token punctuation">}</span>watch: <span class="token punctuation">{</span>  bet: <span class="token punctuation">{</span>    handle<span class="token punctuation">(</span>newValue, oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>      console.log<span class="token punctuation">(</span>newValue<span class="token punctuation">)</span>    <span class="token punctuation">}</span>  <span class="token punctuation">}</span>,  deep: <span class="token boolean">true</span><span class="token punctuation">}</span></code></pre><h3 id="Watch和computed的区别"><a href="#Watch和computed的区别" class="headerlink" title="Watch和computed的区别"></a>Watch和computed的区别</h3><h4 id="Watch"><a href="#Watch" class="headerlink" title="Watch"></a>Watch</h4><blockquote><p>watch用于观察和监听页面上的vue实例，当你需要在数据变化响应时，执行异步操作，或高性能消耗的操作，那么watch为最佳选择</p></blockquote><h4 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h4><blockquote><p>可以关联多个实时计算的对象，当这些对象中的其中一个改变时都会触发这个属性具有缓存能力，所以只有当数据再次改变时才会重新渲染，否则就会直接拿取缓存中的数据</p></blockquote><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>建站第一篇文章</title>
       <link href="/2020/02/23/first/"/>
       <url>/2020/02/23/first/</url>

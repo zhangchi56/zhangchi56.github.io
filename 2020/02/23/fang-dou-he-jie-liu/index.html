@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="friends, HTML,CSS,JavaScript,JQuery,React,Vue.js">
-    <meta name="description" content="friends | 暖心i">
+    <meta name="keywords" content="Web,Vue">
+    <meta name="description" content="前端网页性能优化">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>friends | 暖心i</title>
+    <title>防抖和节流 | 暖心i</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -300,276 +300,126 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                命中注定 相遇于你
-                
-            </div>
+    
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['从来没有真正的绝境, 只有心灵的迷途','每一秒我们都有机会，让自己过的更好'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">防抖和节流</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
-</script>
 
 
-    </div>
-</div>
-<style>
-    .friends-container {
-        margin-top: -100px;
-        margin-bottom: 30px;
-    }
+<main class="container content">
 
-    .friends-container .tag-title {
-        margin-bottom: 10px;
-        color: #3C4858;
-        font-size: 1.75rem;
-        font-weight: 400;
-    }
-
-    .frind-ship img {
-        border-radius: 50%;
-    }
-
-    /* 一下是按钮样式 */
-
-    .frind-ship {
-        padding: 10px 20px;
-    }
-
-    .frind-ship .title {
-        display: flex;
-        align-items: center;
-    }
-
-    .frind-ship .title div {
-        color: #fff;
-        padding-left: 10px;
-    }
-
-    .frind-ship .title img {
-        width: 100px;
-        height: 100px;
-        flex-shrink: 0;
-    }
-
-    .frind-ship .title h1 {
-        padding-bottom: 5px;
-        border-bottom: 2px solid #fff;
-        position: relative;
-        top:-15px;
-        left: 3px;
-    }
-
-    .friend-button {
-        display: flex;
-        justify-content: center;
-        margin-bottom: -27px;
-    }
-
-    .friend-button a {
-        border-radius: 40px;
-    }
-
-    .friend-all .tag-post {
-        margin-bottom: 30px;
-    }
-
-    .button-caution {
-        background-color: #FF4351;
-        border-color: #FF4351;
-        color: #FFF;
-    }
-
-    .button {
-        font-weight: 300;
-        font-size: 16px;
-        font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        text-decoration: none;
-        text-align: center;
-        line-height: 40px;
-        height: 40px;
-        padding: 0 40px;
-        margin: 0;
-        display: inline-block;
-        appearance: none;
-        cursor: pointer;
-        border: none;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-transition-property: all;
-        transition-property: all;
-        -webkit-transition-duration: .3s;
-        transition-duration: .3s;
-    }
-
-    .title {
-        margin-bottom: 0rem !important;
-    }
-
-    .card {
-        margin: 3rem 0 1rem 0 !important;
-    }
-
-    .button-glow.button-caution {
-        -webkit-animation-name: glowing-caution;
-        animation-name: glowing-caution;
-    }
-
-    @-webkit-keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
-
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
-
-    @keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
-
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
-
-    .button-caution:hover {
-        background-color: #ff7680;
-        border-color: #ff7680;
-        color: #FFF;
-        text-decoration: none;
-    }
-
-    .frind-card1 {
-        background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-    }
-
-    .frind-card2 {
-        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .frind-card3 {
-        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
-    }
-
-    .frind-card4 {
-        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-    }
-
-    .frind-card5 {
-        background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
-    }
-
-    .frind-card6 {
-        background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
-    }
-
-    .frind-card7 {
-        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
-    }
-
-    .frind-card8 {
-        background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
-    }
-
-    .frind-card9 {
-        background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-    }
-
-    .frind-card10 {
-        background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-    }
     
-    article .card {
-        overflow: visible !important;
-    }
-</style>
-
-<main class="content">
-    <div class="container friends-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="tag-title center-align">
-                    <i class="fas fa-address-book"></i>&nbsp;&nbsp;友情链接
-                </div>
-                <article id="friends-link">
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
                     
-                    
-                    <div class="row tags-posts friend-all">
+                    <div class="article-tag">
                         
+                            <a href="/tags/Web/">
+                                <span class="chip bg-color">Web</span>
+                            </a>
                         
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card1">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="/medias/xiaodou.jpg" alt="img">
-                                        <div>
-                                            <h1 class="friend-name">小逗</h1>
-                                            <p style="position: relative;top: -35px;">编程界大佬，技术牛，还热心，不懂的都可以请教大佬</p>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://rosejjj.coding.net/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            前去学习
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
+                            </a>
                         
                     </div>
                     
-                </article>
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category">
+                                性能优化
+                            </a>
+                        
+                    </div>
+                    
+                </div>
             </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-23
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-02-23
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    206
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
         </div>
-        <div class="card">
-            <div class="card-content">
-                <script>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h2><h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><blockquote>
+<p>函数防抖函数的防抖就是函数需要频繁触发情况时候，只有足够空闲的时间，才执行一次<br>例如：实时搜索、拖拽中</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> debounce<span class="token punctuation">(</span>func, delay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> timer <span class="token operator">=</span> null<span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> clearTimeout<span class="token punctuation">(</span>timer<span class="token punctuation">)</span> timer <span class="token operator">=</span> setTimeout<span class="token punctuation">((</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+          func.apply<span class="token punctuation">(</span>this, arguments<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>, delay<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+<h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><blockquote>
+<p>函数节流就是预定一个函数只有在大于等于执行周期时候才会执行，周期内调用不执行<br>例如：窗口调整、页面滚动、购物疯狂点击</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> throttle<span class="token punctuation">(</span>func, wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      var lastTime <span class="token operator">=</span> 0<span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        var nowTime <span class="token operator">=</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span>.getTime<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>nowTime - lastTime <span class="token operator">></span> wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          func.apply<span class="token punctuation">(</span>this, arguments<span class="token punctuation">)</span> lastTime <span class="token operator">=</span> nowTime
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -589,19 +439,108 @@
           });
       </script>
             </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhangchi56.coding.net/user/projects" rel="external nofollow noreferrer">ZhangChi</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhangchi56.coding.net/user/projects/2020/02/23/fang-dou-he-jie-liu/">https://zhangchi56.coding.net/user/projects/2020/02/23/fang-dou-he-jie-liu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://zhangchi56.coding.net/user/projects" target="_blank">ZhangChi</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Web/">
+                                    <span class="chip bg-color">Web</span>
+                                </a>
+                            
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
         </div>
-        <div class="card">
+    </div>
 
-            
+    
 
-            
+    
 
-            
+    
 
-            
+    
 
-            
-            <style>
+    
+        <style>
     .valine-card {
         margin: 1.5rem auto;
     }
@@ -863,19 +802,153 @@
     });
 </script>
 
-            
+    
 
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/02/23/fang-dou-he-jie-liu/">
+                    <div class="card-image">
+                        
+                        <img src="/images/1.jpg" class="responsive-img" alt="防抖和节流">
+                        
+                        <span class="card-title">防抖和节流</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前端网页性能优化
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category">
+                                    性能优化
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
+                    </a>
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
         </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/23/vue-watch/">
+                    <div class="card-image">
+                        
+                        <img src="/images/2.jpg" class="responsive-img" alt="vue中watch原理">
+                        
+                        <span class="card-title">vue中watch原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            深入学习vue中watch底层原理
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Vue/" class="post-category">
+                                    Vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
+                    </a>
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
     </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    
+
 </main>
 
-<script>
-    $(function () {
-        $('#friends-link').masonry({
-            itemSelector: '.friend-div'
-        });
-    });
-</script>
 
 
     <footer class="page-footer bg-color">
