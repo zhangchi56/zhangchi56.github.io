@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>zcのblog</title>
   
-  
+  <subtitle>命中注定 与你相遇</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/child/"/>
@@ -77,6 +77,29 @@
       <category term="hexo" scheme="http://yoursite.com/child/tags/hexo/"/>
     
       <category term="建站" scheme="http://yoursite.com/child/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/child/2020/02/21/hello-world/"/>
+    <id>http://yoursite.com/child/2020/02/21/hello-world/</id>
+    <published>2020-02-21T08:24:01.707Z</published>
+    <updated>2020-02-22T00:45:20.115Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
     
   </entry>
   
