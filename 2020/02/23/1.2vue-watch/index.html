@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo">
-    <meta name="description" content="这是用hexo搭建的博客,主要用来记录我从前端小白到前端大牛的奋斗之路，同时也会写一些技术心得。">
+    <meta name="keywords" content="web,vue">
+    <meta name="description" content="深入学习vue中watch底层原理">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>建站第一篇文章 | 暖心i</title>
+    <title>vue中watch原理 | 暖心i</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">建站第一篇文章</h1>
+                    <h1 class="description center-align post-title">vue中watch原理</h1>
                 </div>
             </div>
         </div>
@@ -319,10 +319,105 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -331,8 +426,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/web/">
+                                <span class="chip bg-color">web</span>
+                            </a>
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -343,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Hexo/" class="post-category">
-                                Hexo
+                            <a href="/categories/vue/" class="post-category">
+                                vue
                             </a>
                         
                     </div>
@@ -363,14 +462,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-02-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    356
                 </div>
                 
 
@@ -393,7 +492,66 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="从今天开始，每一天都至少要写一遍文章到博客里"><a href="#从今天开始，每一天都至少要写一遍文章到博客里" class="headerlink" title="从今天开始，每一天都至少要写一遍文章到博客里"></a>从今天开始，每一天都至少要写一遍文章到博客里</h1><script>
+                <h2 id="vue中watch原理"><a href="#vue中watch原理" class="headerlink" title="vue中watch原理"></a>vue中watch原理</h2><h3 id="普通的watch"><a href="#普通的watch" class="headerlink" title="普通的watch"></a>普通的watch</h3><pre class=" language-bash"><code class="language-bash">data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    frontPoints: 0
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>,
+watch: <span class="token punctuation">{</span>
+  frontPoints<span class="token punctuation">(</span>newValue,oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console.log<span class="token punctuation">(</span>newValue<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="对象属性的watch"><a href="#对象属性的watch" class="headerlink" title="对象属性的watch"></a>对象属性的watch</h3><blockquote>
+<p>对象和数组都是引用类型，引用类型变量存的是地址，地址没有变，所以不会触发watch。这时我们需要进行深度监听，就需要加上一个属性 deep，值为 true</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash">data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    bet: <span class="token punctuation">{</span>
+      pokerState: 53,
+      pokerHistory: <span class="token string">'local'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>,
+watch: <span class="token punctuation">{</span>
+  bet: <span class="token punctuation">{</span>
+    handle<span class="token punctuation">(</span>newValue, oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console.log<span class="token punctuation">(</span>newValue<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  deep: <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>注意：只要对象的属性发生变化，就会执行handler函数；如果将监听对象中的具体属性，则可以通过计算属性computed作为中间层进行监听，例如：</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash">data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    bet: <span class="token punctuation">{</span>
+      pokerState: 53,
+      pokerHistory: <span class="token string">'local'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>,
+computed: <span class="token punctuation">{</span>
+  pokerHistory<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> this.bet.pokerHistory
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+watch: <span class="token punctuation">{</span>
+  bet: <span class="token punctuation">{</span>
+    handle<span class="token punctuation">(</span>newValue, oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console.log<span class="token punctuation">(</span>newValue<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  deep: <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="Watch和computed的区别"><a href="#Watch和computed的区别" class="headerlink" title="Watch和computed的区别"></a>Watch和computed的区别</h3><h4 id="Watch"><a href="#Watch" class="headerlink" title="Watch"></a>Watch</h4><blockquote>
+<p>watch用于观察和监听页面上的vue实例，当你需要在数据变化响应时，执行异步操作，或高性能消耗的操作，那么watch为最佳选择</p>
+</blockquote>
+<h4 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h4><blockquote>
+<p>可以关联多个实时计算的对象，当这些对象中的其中一个改变时都会触发这个属性具有缓存能力，所以只有当数据再次改变时才会重新渲染，否则就会直接拿取缓存中的数据</p>
+</blockquote>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -426,7 +584,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhangchi56.coding.net/user/projects" rel="external nofollow noreferrer">ZhangChi</a>
+                    <a href="https://zhangchi56.coding.net/user/projects" rel="external nofollow noreferrer">zhanghi</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -436,7 +594,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhangchi56.coding.net/user/projects/2020/02/23/first/">https://zhangchi56.coding.net/user/projects/2020/02/23/first/</a>
+                    <a href="https://zhangchi56.coding.net/user/projects/2020/02/23/1.2vue-watch/">https://zhangchi56.coding.net/user/projects/2020/02/23/1.2vue-watch/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -449,7 +607,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://zhangchi56.coding.net/user/projects" target="_blank">ZhangChi</a>
+                    <a href="https://zhangchi56.coding.net/user/projects" target="_blank">zhanghi</a>
                     !
                 </span>
             </div>
@@ -474,8 +632,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/web/">
+                                    <span class="chip bg-color">web</span>
+                                </a>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -783,18 +945,18 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/23/1.2vue-watch/">
+                <a href="/2020/02/23/1.1-fang-dou-he-jie-liu/">
                     <div class="card-image">
                         
-                        <img src="/images/2.jpg" class="responsive-img" alt="vue中watch原理">
+                        <img src="/images/1.jpg" class="responsive-img" alt="防抖和节流">
                         
-                        <span class="card-title">vue中watch原理</span>
+                        <span class="card-title">防抖和节流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            深入学习vue中watch底层原理
+                            前端网页性能优化
                         
                     </div>
                     <div class="publish-info">
@@ -805,8 +967,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vue/" class="post-category">
-                                    vue
+                            <a href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category">
+                                    性能优化
                                 </a>
                             
                             
@@ -832,7 +994,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2020/02/23/first/">
@@ -865,7 +1027,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -909,6 +1070,100 @@
 code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
 </style>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
