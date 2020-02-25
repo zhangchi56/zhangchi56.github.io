@@ -5,6 +5,31 @@
     
     <entry>
       <title>前端开发三点注意事项</title>
+      <link href="/2020/02/25/3.3-zong-gan-jue-jing-shen-bu-zai-zhuang-tai/"/>
+      <url>/2020/02/25/3.3-zong-gan-jue-jing-shen-bu-zai-zhuang-tai/</url>
+      
+        <content type="html"><![CDATA[<p>最近总是感觉精神不在状态？？？？？？？<br>22点就很困了，但是在床上翻来覆去睡不着，头还有点晕<br>是不是该锻炼身体了？？？</p><p>近期的目标是先找份工作，其次还想学习一下伪音，比如伪音公子音<br><img src="/medias/imgs/11.jpg" alt=""></p><p>图就随便配一张了，今天就记录的这了</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>前端开发三点注意事项</title>
       <link href="/2020/02/25/3.2-qian-duan-kai-fa-san-dian-zhu-yi-shi-xiang/"/>
       <url>/2020/02/25/3.2-qian-duan-kai-fa-san-dian-zhu-yi-shi-xiang/</url>
       
