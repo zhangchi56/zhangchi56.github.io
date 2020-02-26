@@ -4,7 +4,34 @@
   
     
     <entry>
-      <title>前端开发三点注意事项</title>
+      <title>获取对象值得三种写法</title>
+      <link href="/2020/02/26/1.2-huo-qu-dui-xiang-zhi-de-san-chong-xie-fa/"/>
+      <url>/2020/02/26/1.2-huo-qu-dui-xiang-zhi-de-san-chong-xie-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="获取对象值得三种写法"><a href="#获取对象值得三种写法" class="headerlink" title="获取对象值得三种写法"></a>获取对象值得三种写法</h2><p>今天在写vuex时，遇到一个问题，总是出错，最后用console.log一步步打印，终于到问题定位<br>其实就是很简单的对象获取值得问题</p><pre class=" language-bash"><code class="language-bash"> <span class="token operator">&lt;</span>el-radio-group :value<span class="token operator">=</span><span class="token string">"skus_type"</span> @input<span class="token operator">=</span><span class="token string">"vModel({key:'skus_type',value:<span class="token variable">$event</span>})"</span> size<span class="token operator">=</span><span class="token string">"medium"</span><span class="token operator">></span>              <span class="token operator">&lt;</span>el-radio-button :label<span class="token operator">=</span><span class="token string">"0"</span> size<span class="token operator">=</span><span class="token string">"medium"</span><span class="token operator">></span>统一规格<span class="token operator">&lt;</span>/el-radio-button<span class="token operator">></span>              <span class="token operator">&lt;</span>el-radio-button :label<span class="token operator">=</span><span class="token string">"1"</span> size<span class="token operator">=</span><span class="token string">"medium"</span><span class="token operator">></span>多规格<span class="token operator">&lt;</span>/el-radio-button<span class="token operator">></span>            <span class="token operator">&lt;</span>/el-radio-group<span class="token operator">></span>vModel<span class="token punctuation">(</span>state,payload<span class="token punctuation">)</span><span class="token punctuation">{</span>      state<span class="token punctuation">[</span>payload<span class="token punctuation">[</span><span class="token string">'key'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> payload<span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span>      console.log<span class="token punctuation">(</span>state.skus_type<span class="token punctuation">)</span>    <span class="token punctuation">}</span>  <span class="token punctuation">}</span>,</code></pre><p>##问题出现的原因是</p><pre class=" language-bash"><code class="language-bash">state<span class="token punctuation">[</span>payload<span class="token punctuation">[</span><span class="token string">'key'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> payload<span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span>错写成state<span class="token punctuation">[</span>payload<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> payload<span class="token punctuation">[</span>value<span class="token punctuation">]</span>错误原因是没加引号，其实很简单</code></pre><p>##考察的知识点如下</p><pre class=" language-bash"><code class="language-bash">var name <span class="token operator">=</span> <span class="token string">"张三"</span>  var age <span class="token operator">=</span> 18  var obj <span class="token operator">=</span> <span class="token punctuation">{</span>    name,    age  <span class="token punctuation">}</span>  var test1 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>    console.log<span class="token punctuation">(</span>obj.name<span class="token punctuation">)</span>     //zhangsan    console.log<span class="token punctuation">(</span>obj<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span>    //undefined    console.log<span class="token punctuation">(</span>obj<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  //zhangsan  <span class="token punctuation">}</span>  test1<span class="token punctuation">(</span><span class="token punctuation">{</span>    name <span class="token keyword">:</span> <span class="token string">"zhangsan"</span>,    age <span class="token keyword">:</span> 18  <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>随便写写</title>
       <link href="/2020/02/25/3.3-zong-gan-jue-jing-shen-bu-zai-zhuang-tai/"/>
       <url>/2020/02/25/3.3-zong-gan-jue-jing-shen-bu-zai-zhuang-tai/</url>
       

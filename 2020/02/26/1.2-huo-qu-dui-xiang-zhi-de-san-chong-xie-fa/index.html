@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="web,vue">
-    <meta name="description" content="前端网页性能优化">
+    <meta name="keywords" content="web,javascript">
+    <meta name="description" content="简单知识点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>防抖和节流 | 暖心i</title>
+    <title>获取对象值得三种写法 | 暖心i</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">防抖和节流</h1>
+                    <h1 class="description center-align post-title">获取对象值得三种写法</h1>
                 </div>
             </div>
         </div>
@@ -319,10 +319,105 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -335,8 +430,8 @@
                                 <span class="chip bg-color">web</span>
                             </a>
                         
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
                             </a>
                         
                     </div>
@@ -347,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category">
-                                性能优化
+                            <a href="/categories/javascript/" class="post-category">
+                                javascript
                             </a>
                         
                     </div>
@@ -360,21 +455,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-02-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-25
+                    2020-02-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    206
+                    250
                 </div>
                 
 
@@ -397,28 +492,40 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h2><h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><blockquote>
-<p>函数防抖函数的防抖就是函数需要频繁触发情况时候，只有足够空闲的时间，才执行一次<br>例如：实时搜索、拖拽中</p>
-</blockquote>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> debounce<span class="token punctuation">(</span>func, delay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">let</span> timer <span class="token operator">=</span> null<span class="token punctuation">;</span>
-      <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> clearTimeout<span class="token punctuation">(</span>timer<span class="token punctuation">)</span> timer <span class="token operator">=</span> setTimeout<span class="token punctuation">((</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-          func.apply<span class="token punctuation">(</span>this, arguments<span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>, delay<span class="token punctuation">)</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span></code></pre>
-<h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><blockquote>
-<p>函数节流就是预定一个函数只有在大于等于执行周期时候才会执行，周期内调用不执行<br>例如：窗口调整、页面滚动、购物疯狂点击</p>
-</blockquote>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> throttle<span class="token punctuation">(</span>func, wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      var lastTime <span class="token operator">=</span> 0<span class="token punctuation">;</span>
-      <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        var nowTime <span class="token operator">=</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span>.getTime<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>nowTime - lastTime <span class="token operator">></span> wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          func.apply<span class="token punctuation">(</span>this, arguments<span class="token punctuation">)</span> lastTime <span class="token operator">=</span> nowTime
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span></code></pre>
+                <h2 id="获取对象值得三种写法"><a href="#获取对象值得三种写法" class="headerlink" title="获取对象值得三种写法"></a>获取对象值得三种写法</h2><p>今天在写vuex时，遇到一个问题，总是出错，最后用console.log一步步打印，终于到问题定位<br>其实就是很简单的对象获取值得问题</p>
+<pre class=" language-bash"><code class="language-bash">
+ <span class="token operator">&lt;</span>el-radio-group :value<span class="token operator">=</span><span class="token string">"skus_type"</span> @input<span class="token operator">=</span><span class="token string">"vModel({key:'skus_type',value:<span class="token variable">$event</span>})"</span> size<span class="token operator">=</span><span class="token string">"medium"</span><span class="token operator">></span>
+              <span class="token operator">&lt;</span>el-radio-button :label<span class="token operator">=</span><span class="token string">"0"</span> size<span class="token operator">=</span><span class="token string">"medium"</span><span class="token operator">></span>统一规格<span class="token operator">&lt;</span>/el-radio-button<span class="token operator">></span>
+              <span class="token operator">&lt;</span>el-radio-button :label<span class="token operator">=</span><span class="token string">"1"</span> size<span class="token operator">=</span><span class="token string">"medium"</span><span class="token operator">></span>多规格<span class="token operator">&lt;</span>/el-radio-button<span class="token operator">></span>
+            <span class="token operator">&lt;</span>/el-radio-group<span class="token operator">></span>
+
+vModel<span class="token punctuation">(</span>state,payload<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      state<span class="token punctuation">[</span>payload<span class="token punctuation">[</span><span class="token string">'key'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> payload<span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span>
+      console.log<span class="token punctuation">(</span>state.skus_type<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,</code></pre>
+<p>##问题出现的原因是</p>
+<pre class=" language-bash"><code class="language-bash">state<span class="token punctuation">[</span>payload<span class="token punctuation">[</span><span class="token string">'key'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> payload<span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span>
+错写成
+state<span class="token punctuation">[</span>payload<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> payload<span class="token punctuation">[</span>value<span class="token punctuation">]</span>
+错误原因是没加引号，其实很简单</code></pre>
+<p>##考察的知识点如下</p>
+<pre class=" language-bash"><code class="language-bash">var name <span class="token operator">=</span> <span class="token string">"张三"</span>
+  var age <span class="token operator">=</span> 18
+  var obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name,
+    age
+  <span class="token punctuation">}</span>
+  var test1 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console.log<span class="token punctuation">(</span>obj.name<span class="token punctuation">)</span>     //zhangsan
+    console.log<span class="token punctuation">(</span>obj<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span>    //undefined
+    console.log<span class="token punctuation">(</span>obj<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  //zhangsan
+  <span class="token punctuation">}</span>
+
+  test1<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    name <span class="token keyword">:</span> <span class="token string">"zhangsan"</span>,
+    age <span class="token keyword">:</span> 18
+  <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -452,7 +559,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/zhangchi56" rel="external nofollow noreferrer">ZhangChi</a>
+                    <a href="https://github.com/zhangchi56" rel="external nofollow noreferrer">zhanghi</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -462,7 +569,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/zhangchi56/2020/02/23/1.1-fang-dou-he-jie-liu/">https://github.com/zhangchi56/2020/02/23/1.1-fang-dou-he-jie-liu/</a>
+                    <a href="https://github.com/zhangchi56/2020/02/26/1.2-huo-qu-dui-xiang-zhi-de-san-chong-xie-fa/">https://github.com/zhangchi56/2020/02/26/1.2-huo-qu-dui-xiang-zhi-de-san-chong-xie-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -475,7 +582,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://github.com/zhangchi56" target="_blank">ZhangChi</a>
+                    <a href="https://github.com/zhangchi56" target="_blank">zhanghi</a>
                     !
                 </span>
             </div>
@@ -504,8 +611,8 @@
                                     <span class="chip bg-color">web</span>
                                 </a>
                             
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
                                 </a>
                             
                         </div>
@@ -809,16 +916,70 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/23/3.1-zai-ni-bian-hao-de-zhe-xie-nian-yi-ding-guo-de-hen-xin-ku-ba/">
+                <a href="/2020/02/26/1.2-huo-qu-dui-xiang-zhi-de-san-chong-xie-fa/">
                     <div class="card-image">
                         
-                        <img src="/images/3.jpg" class="responsive-img" alt="在你变好的这些年，一定过得很辛苦吧？">
+                        <img src="/images/12.jpg" class="responsive-img" alt="获取对象值得三种写法">
                         
-                        <span class="card-title">在你变好的这些年，一定过得很辛苦吧？</span>
+                        <span class="card-title">获取对象值得三种写法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            简单知识点
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/javascript/" class="post-category">
+                                    javascript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/web/">
+                        <span class="chip bg-color">web</span>
+                    </a>
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/25/3.3-zong-gan-jue-jing-shen-bu-zai-zhuang-tai/">
+                    <div class="card-image">
+                        
+                        <img src="/images/5.jpg" class="responsive-img" alt="随便写写">
+                        
+                        <span class="card-title">随便写写</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -828,9 +989,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -848,58 +1009,6 @@
                     
                     <a href="/tags/%E9%9A%8F%E7%AC%94/">
                         <span class="chip bg-color">随笔</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/02/23/1.2vue-watch/">
-                    <div class="card-image">
-                        
-                        <img src="/images/2.jpg" class="responsive-img" alt="vue中watch原理">
-                        
-                        <span class="card-title">vue中watch原理</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            深入学习vue中watch底层原理
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/vue/" class="post-category">
-                                    vue
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/web/">
-                        <span class="chip bg-color">web</span>
-                    </a>
-                    
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -938,6 +1047,100 @@
 code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
 </style>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 

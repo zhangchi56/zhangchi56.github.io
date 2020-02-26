@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/zhangchi56/"/>
-  <updated>2020-02-25T15:59:14.332Z</updated>
+  <updated>2020-02-26T04:47:38.468Z</updated>
   <id>https://github.com/zhangchi56/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>前端开发三点注意事项</title>
+    <title>获取对象值得三种写法</title>
+    <link href="https://github.com/zhangchi56/2020/02/26/1.2-huo-qu-dui-xiang-zhi-de-san-chong-xie-fa/"/>
+    <id>https://github.com/zhangchi56/2020/02/26/1.2-huo-qu-dui-xiang-zhi-de-san-chong-xie-fa/</id>
+    <published>2020-02-26T04:32:27.013Z</published>
+    <updated>2020-02-26T04:47:38.468Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;获取对象值得三种写法&quot;&gt;&lt;a href=&quot;#获取对象值得三种写法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://github.com/zhangchi56/categories/javascript/"/>
+    
+    
+      <category term="web" scheme="https://github.com/zhangchi56/tags/web/"/>
+    
+      <category term="javascript" scheme="https://github.com/zhangchi56/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随便写写</title>
     <link href="https://github.com/zhangchi56/2020/02/25/3.3-zong-gan-jue-jing-shen-bu-zai-zhuang-tai/"/>
     <id>https://github.com/zhangchi56/2020/02/25/3.3-zong-gan-jue-jing-shen-bu-zai-zhuang-tai/</id>
     <published>2020-02-25T15:49:04.461Z</published>
-    <updated>2020-02-25T15:59:14.332Z</updated>
+    <updated>2020-02-26T04:34:32.086Z</updated>
     
     <summary type="html">
     
