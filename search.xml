@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>想赚很多很多钱</title>
+      <link href="/2020/02/27/3.4-zhuan-qian/"/>
+      <url>/2020/02/27/3.4-zhuan-qian/</url>
+      
+        <content type="html"><![CDATA[<p>希望能快点赚钱<br>不要再为了买一个喜欢的东西而纠结很久<br>做什么事情都要先考虑考虑钱的问题！！！<br>买什么东西也都要精挑细选<br>想吃什么就吃什么<br>东西看上了就买买买！！！</p><p>要快点学习技术，赚很多很多的钱~<br>比如先定一个小目标，月入过万~</p><p>JavaScript要熟练运用<br>React、Vue、Angular也要熟练运用<br>uni-app跨平台开发也要熟练运用</p><p>会这些月入过万应该差不多了吧？</p><p><img src="/medias/imgs/15.jpg" alt=""></p><p>加油吧<br>年轻就是现在最大的资本</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>玄学$event</title>
+      <link href="/2020/02/27/1.3vue-xuan-xue-event/"/>
+      <url>/2020/02/27/1.3vue-xuan-xue-event/</url>
+      
+        <content type="html"><![CDATA[<h2 id="vue中watch原理"><a href="#vue中watch原理" class="headerlink" title="vue中watch原理"></a>vue中watch原理</h2><h3 id="el-input的type-”text”"><a href="#el-input的type-”text”" class="headerlink" title="el-input的type=”text”"></a>el-input的type=”text”</h3><blockquote><p>$event为一个大的对象，里面有很多值 获取input的value 为$event.target.value</p></blockquote><pre class=" language-bash"><code class="language-bash">  <span class="token operator">&lt;</span>el-form-item label<span class="token operator">=</span><span class="token string">"库存预警"</span><span class="token operator">></span>    <span class="token operator">&lt;</span>el-input type<span class="token operator">=</span><span class="token string">"text"</span> :value<span class="token operator">=</span><span class="token string">"min_stock"</span> @input<span class="token operator">=</span><span class="token string">"vModel('min_stock',<span class="token variable">$event</span>)"</span> class<span class="token operator">=</span><span class="token string">"w-25"</span><span class="token operator">></span><span class="token operator">&lt;</span>/el-input<span class="token operator">></span>    <span class="token operator">&lt;</span>template slot<span class="token operator">=</span><span class="token string">"append"</span><span class="token operator">></span>件<span class="token operator">&lt;</span>/template<span class="token operator">></span>  <span class="token operator">&lt;</span>/el-form-item<span class="token operator">></span></code></pre><blockquote><p>$event 为实时绑定的input 值</p></blockquote><pre class=" language-bash"><code class="language-bash">  <span class="token operator">&lt;</span>el-form-item label<span class="token operator">=</span><span class="token string">"库存预警"</span><span class="token operator">></span>    <span class="token operator">&lt;</span>el-input type<span class="token operator">=</span><span class="token string">"number"</span> :value<span class="token operator">=</span><span class="token string">"min_stock"</span> @input<span class="token operator">=</span><span class="token string">"vModel('min_stock',<span class="token variable">$event</span>)"</span> class<span class="token operator">=</span><span class="token string">"w-25"</span><span class="token operator">></span><span class="token operator">&lt;</span>/el-input<span class="token operator">></span>    <span class="token operator">&lt;</span>template slot<span class="token operator">=</span><span class="token string">"append"</span><span class="token operator">></span>件<span class="token operator">&lt;</span>/template<span class="token operator">></span>  <span class="token operator">&lt;</span>/el-form-item<span class="token operator">></span></code></pre><blockquote><p>$event 为实时绑定的label 值</p></blockquote><pre class=" language-bash"><code class="language-bash">  <span class="token operator">&lt;</span>el-form-item label<span class="token operator">=</span><span class="token string">"库存显示"</span><span class="token operator">></span>    <span class="token operator">&lt;</span>el-radio-group :value<span class="token operator">=</span><span class="token string">"stock_display"</span> @input<span class="token operator">=</span><span class="token string">"vModel('stock_display',<span class="token variable">$event</span>)"</span><span class="token operator">></span>      <span class="token operator">&lt;</span>el-radio :label<span class="token operator">=</span><span class="token string">"0"</span><span class="token operator">></span>是<span class="token operator">&lt;</span>/el-radio<span class="token operator">></span>      <span class="token operator">&lt;</span>el-radio :label<span class="token operator">=</span><span class="token string">"1"</span><span class="token operator">></span>否<span class="token operator">&lt;</span>/el-radio<span class="token operator">></span>    <span class="token operator">&lt;</span>/el-radio-group<span class="token operator">></span></code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> element </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>获取对象值得三种写法</title>
       <link href="/2020/02/26/1.2-huo-qu-dui-xiang-zhi-de-san-chong-xie-fa/"/>
       <url>/2020/02/26/1.2-huo-qu-dui-xiang-zhi-de-san-chong-xie-fa/</url>

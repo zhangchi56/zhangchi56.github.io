@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/zhangchi56/"/>
-  <updated>2020-02-26T04:55:11.738Z</updated>
+  <updated>2020-02-27T13:07:45.578Z</updated>
   <id>https://github.com/zhangchi56/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>想赚很多很多钱</title>
+    <link href="https://github.com/zhangchi56/2020/02/27/3.4-zhuan-qian/"/>
+    <id>https://github.com/zhangchi56/2020/02/27/3.4-zhuan-qian/</id>
+    <published>2020-02-27T12:55:10.020Z</published>
+    <updated>2020-02-27T13:07:45.578Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;希望能快点赚钱&lt;br&gt;不要再为了买一个喜欢的东西而纠结很久&lt;br&gt;做什么事情都要先考虑考虑钱的问题！！！&lt;br&gt;买什么东西也都要精挑细选&lt;br&gt;想吃什么就吃什么&lt;br&gt;东西看上了就买买买！！！&lt;/p&gt;
+&lt;p&gt;要快点学习技术，赚很多很多的钱~&lt;br&gt;比如先定一个小目标，月入过
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://github.com/zhangchi56/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="https://github.com/zhangchi56/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>玄学$event</title>
+    <link href="https://github.com/zhangchi56/2020/02/27/1.3vue-xuan-xue-event/"/>
+    <id>https://github.com/zhangchi56/2020/02/27/1.3vue-xuan-xue-event/</id>
+    <published>2020-02-27T11:32:10.353Z</published>
+    <updated>2020-02-27T13:07:35.477Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;vue中watch原理&quot;&gt;&lt;a href=&quot;#vue中watch原理&quot; class=&quot;headerlink&quot; title=&quot;vue中watch原理&quot;&gt;&lt;/a&gt;vue中watch原理&lt;/h2&gt;&lt;h3 id=&quot;el-input的type-”text”&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://github.com/zhangchi56/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://github.com/zhangchi56/tags/vue/"/>
+    
+      <category term="element" scheme="https://github.com/zhangchi56/tags/element/"/>
+    
+  </entry>
   
   <entry>
     <title>获取对象值得三种写法</title>
