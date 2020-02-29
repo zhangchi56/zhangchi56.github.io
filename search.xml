@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>flag后台管理完成100章</title>
+      <link href="/2020/02/29/6.1-mian-shi-ti/"/>
+      <url>/2020/02/29/6.1-mian-shi-ti/</url>
+      
+        <content type="html"><![CDATA[<h1 id="面试总结"><a href="#面试总结" class="headerlink" title="面试总结"></a>面试总结</h1><blockquote><p>面试非常喜欢问底层原理，虽说底层原理在实际开发中，几乎用不到，但是能不能拿到offer就看这些底层原理，所以总结如下</p></blockquote><ul><li><p>重视基础和原理</p></li><li><p>重视基础和原理</p></li><li><p>重视基础和原理</p></li></ul><h1 id="高频必考"><a href="#高频必考" class="headerlink" title="高频必考 ***"></a>高频必考 ***</h1><h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><pre><code>构造函数是一种特殊的方法，主要用来在创建对象时初始化对象。每个构造函数都有prototype(原型)(箭头函数Function.prototype.bind()没有)属性，这个prototype(原型)属性是一个指针，指向一个对象，这个对象的是包特定类型的所有实例共享的属性和方法，即这个原型对象是用来给实例对象共享属性和方法的。每个实例的__proto__指向这个构造函数/类的prototype属性。</code></pre><pre><code>关于new操作符：1. new执行的函数, 函数内部默认生成了一个对象2. 函数内部的this默认指向了这个new生成的对象3. new执行函数生成的这个对象, 是函数的默认返回值</code></pre><blockquote><p>ES5例子</p></blockquote><pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> Person<span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>    this.name <span class="token operator">=</span> obj.name    this.age<span class="token operator">=</span> obj.age<span class="token punctuation">}</span>// 原型方法Person.prototype.say <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  console.log<span class="token punctuation">(</span><span class="token string">'你好,'</span>, this.name <span class="token punctuation">)</span><span class="token punctuation">}</span>// p为实例化对象，new Person<span class="token punctuation">(</span><span class="token punctuation">)</span>这个操作称为构造函数的实例化<span class="token keyword">let</span> p <span class="token operator">=</span> new Person<span class="token punctuation">(</span><span class="token punctuation">{</span>name: <span class="token string">'番茄'</span>, age: <span class="token string">'27'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>console.log<span class="token punctuation">(</span>p.name, p.age<span class="token punctuation">)</span>p.say<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre><blockquote><p>ES6例子</p></blockquote><pre class=" language-bash"><code class="language-bash">class Person<span class="token punctuation">{</span>    constructor<span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>      this.name <span class="token operator">=</span> obj.name        this.age<span class="token operator">=</span> obj.age  <span class="token punctuation">}</span>  say<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>      console.log<span class="token punctuation">(</span>this.name<span class="token punctuation">)</span>  <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">let</span> p <span class="token operator">=</span> new Person<span class="token punctuation">(</span><span class="token punctuation">{</span>name: <span class="token string">'ES6-番茄'</span>, age: <span class="token string">'27'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>console.log<span class="token punctuation">(</span>p.name, p.age<span class="token punctuation">)</span>p.say<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre><blockquote><p>关于原型的继承我们借助寄生组合继承</p></blockquote><pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> Person<span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>    this.name <span class="token operator">=</span> obj.name    this.age <span class="token operator">=</span> obj.age<span class="token punctuation">}</span>Person.prototype.add <span class="token operator">=</span> function<span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">{</span>    console.log<span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span>var p1 <span class="token operator">=</span> new Person<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">"番茄"</span>, age: 18<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token keyword">function</span> Person1<span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>    Person.call<span class="token punctuation">(</span>this, obj<span class="token punctuation">)</span>    this.sex <span class="token operator">=</span> obj.sex<span class="token punctuation">}</span>// 这一步是继承的关键Person1.prototype <span class="token operator">=</span> Object.create<span class="token punctuation">(</span>Person.prototype<span class="token punctuation">)</span>Person1.prototype.play <span class="token operator">=</span> function<span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">{</span>    console.log<span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span>var p2 <span class="token operator">=</span> new Person1<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">"鸡蛋"</span>, age: 118, sex: <span class="token string">"男"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><pre><code>首先说明什么是闭包，闭包简单来说就是函数嵌套函数，内部函数引用来外部函数的变量，从而导致垃圾回收机制没有把当前变量回收掉，这样的操作带来了内存泄漏的影响，当内存泄漏到一定程度会影响你的项目运行变得卡顿等等问题。因此在项目中我们要尽量避免内存泄漏。</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>flag后台管理完成100章</title>
+      <link href="/2020/02/28/3.5-hou-tai-guan-li-100-zhang-flag/"/>
+      <url>/2020/02/28/3.5-hou-tai-guan-li-100-zhang-flag/</url>
+      
+        <content type="html"><![CDATA[<p>这是今天的一个小flag<br>必须要完成，就算通宵也要完成！！！<br>现在时间2020年2月28日20:35:11</p><p>是否完成了？？？<br>否！<br>完成到90章</p><p>7天后要完成到250章节<br>第一天：90章<br>第二天：<br>第三天：<br>第四天：<br>第五天：<br>第六天：<br>第七天：</p><p>是否完成了？？</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>想赚很多很多钱</title>
       <link href="/2020/02/27/3.4-zhuan-qian/"/>
       <url>/2020/02/27/3.4-zhuan-qian/</url>
@@ -167,7 +217,7 @@
       
       <categories>
           
-          <category> 性能优化 </category>
+          <category> javascript </category>
           
       </categories>
       
@@ -176,7 +226,7 @@
             
             <tag> web </tag>
             
-            <tag> vue </tag>
+            <tag> javascript </tag>
             
         </tags>
       
