@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="随笔">
-    <meta name="description" content="今天必须要把vue后台管理完成到100章">
+    <meta name="keywords" content="面试">
+    <meta name="description" content="前端必背面试题">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>flag后台管理完成100章 | 暖心i</title>
+    <title>2020面试题总结 | 暖心i</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">flag后台管理完成100章</h1>
+                    <h1 class="description center-align post-title">2020面试题总结</h1>
                 </div>
             </div>
         </div>
@@ -331,8 +331,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                                <span class="chip bg-color">随笔</span>
+                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                <span class="chip bg-color">面试</span>
                             </a>
                         
                     </div>
@@ -343,8 +343,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                                随笔
+                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
+                                面试
                             </a>
                         
                     </div>
@@ -370,14 +370,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    647
+                    4.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    17 分
                 </div>
                 
 
@@ -404,13 +404,22 @@
 <li><p>重视基础和原理</p>
 </li>
 </ul>
-<h1 id="高频必考"><a href="#高频必考" class="headerlink" title="高频必考 ***"></a>高频必考 ***</h1><h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><pre><code>构造函数是一种特殊的方法，主要用来在创建对象时初始化对象。每个构造函数都有prototype(原型)(箭头函数
-Function.prototype.bind()没有)属性，这个prototype(原型)属性是一个指针，指向一个对象，这个对象的是包特定类型的所有实例共享的属性和方法，即这个原型对象是用来给实例对象共享属性和方法的。每个实例的__proto__指向这个构造函数/类的prototype属性。</code></pre><pre><code>关于new操作符：
-1. new执行的函数, 函数内部默认生成了一个对象
-
-2. 函数内部的this默认指向了这个new生成的对象
-
-3. new执行函数生成的这个对象, 是函数的默认返回值</code></pre><blockquote>
+<h1 id="高频必考"><a href="#高频必考" class="headerlink" title="高频必考"></a>高频必考</h1><hr>
+<h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><ul>
+<li><p>构造函数是一种特殊的方法，主要用来在创建对象时初始化对象。每个构造函数都有prototype(原型)(箭头函数<br>Function.prototype.bind()没有)属性，这个prototype(原型)属性是一个指针，指向一个对象，这个对象的是包特定类型的所有实例共享的属性和方法，即这个原型对象是用来给实例对象共享属性和方法的。每个实例的<strong>proto</strong>指向这个构造函数/类的prototype属性。</p>
+</li>
+<li><p>关于new操作符：</p>
+</li>
+</ul>
+<ol>
+<li><p>new执行的函数, 函数内部默认生成了一个对象</p>
+</li>
+<li><p>函数内部的this默认指向了这个new生成的对象</p>
+</li>
+<li><p>new执行函数生成的这个对象, 是函数的默认返回值</p>
+</li>
+</ol>
+<blockquote>
 <p>ES5例子</p>
 </blockquote>
 <pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> Person<span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -464,9 +473,169 @@ Person1.prototype.play <span class="token operator">=</span> function<span class
 <span class="token punctuation">}</span>
 var p2 <span class="token operator">=</span> new Person1<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">"鸡蛋"</span>, age: 118, sex: <span class="token string">"男"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><pre><code>首先说明什么是闭包，闭包简单来说就是函数嵌套函数，内部函数引用来外部函数的变量，从而导致垃圾回收
-机制没有把当前变量回收掉，这样的操作带来了内存泄漏的影响，当内存泄漏到一定程度会影响你的项目运行
-变得卡顿等等问题。因此在项目中我们要尽量避免内存泄漏。</code></pre><script>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><ul>
+<li>原型链实际上在上面原型的问题中就有涉及到，在原型的继承中，我们继承来多个原型，这里再提一下实现完美<br>继承的方案，通过借助寄生组合继承，PersonB.prototype = Object.create(PersonA.prototype)<br>这是当我们实例化PersonB得到实例化对象，访问实例化对象的属性时会触发get方法，它会先在自身属性上查<br>找，如果没有这个属性，就会去<strong>proto</strong>中查找，一层层向上直到查找到顶层对象Object，这个查找的过程<br>就是原型链来。</li>
+</ul>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><ul>
+<li>首先说明什么是闭包，闭包简单来说就是函数嵌套函数，内部函数引用来外部函数的变量，从而导致垃圾回收<br>机制没有把当前变量回收掉，这样的操作带来了内存泄漏的影响，当内存泄漏到一定程度会影响你的项目运行<br>变得卡顿等等问题。因此在项目中我们要尽量避免内存泄漏。</li>
+</ul>
+<h3 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h3><ul>
+<li><p>vuex是一个专为vue.js应用程序开发的状态管理器，它采用集中式存储管理应用的所有组件的状态，并且以相<br>应的规则保证状态以一种可以预测的方式发生变化。</p>
+</li>
+<li><p>state: vuex使用单一状态树，用一个对象就包含来全部的应用层级状态</p>
+</li>
+<li><p>mutation: 更改vuex中state的状态的唯一方法就是提交mutation</p>
+</li>
+<li><p>action: action提交的是mutation，而不是直接变更状态，action可以包含任意异步操作</p>
+</li>
+<li><p>getter: 相当于vue中的computed计算属性</p>
+</li>
+</ul>
+<h3 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h3><ul>
+<li>vue-router是vuex.js官方的路由管理器，它和vue.js的核心深度集成，让构建但页面应用变得易如反掌</li>
+</ul>
+<p><router-link> 组件支持用户在具有路由功能的应用中 (点击) 导航。 通过 to 属性指定目标地址</router-link></p>
+<p><router-view> 组件是一个 functional 组件，渲染路径匹配到的视图组件。</router-view></p>
+<p><keep-alive> 组件是一个用来缓存组件</keep-alive></p>
+<p>router.beforeEach</p>
+<p>router.afterEach</p>
+<p>to: Route: 即将要进入的目标 路由对象</p>
+<p>from: Route: 当前导航正要离开的路由</p>
+<p>next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。</p>
+<p>介绍了路由守卫及用法，在项目中路由守卫起到的作用等等</p>
+<h3 id="深拷贝浅拷贝"><a href="#深拷贝浅拷贝" class="headerlink" title="深拷贝浅拷贝"></a>深拷贝浅拷贝</h3><ul>
+<li><p>浅拷贝：浅拷贝通过ES6新特性Object.assign()或者通过扩展运算法…来达到浅拷贝的目的，浅拷贝修改<br>副本，不会影响原数据，但缺点是浅拷贝只能拷贝第一层的数据，且都是值类型数据，如果有引用型数据，修改<br>副本会影响原数据。</p>
+</li>
+<li><p>深拷贝：通过利用JSON.parse(JSON.stringify())来实现深拷贝的目的，但利用JSON拷贝也是有缺点的，<br>当要拷贝的数据中含有undefined/function/symbol类型是无法进行拷贝的，当然我们想项目开发中需要<br>深拷贝的数据一般不会含有以上三种类型，如有需要可以自己在封装一个函数来实现。</p>
+</li>
+</ul>
+<h3 id="Vue通信"><a href="#Vue通信" class="headerlink" title="Vue通信"></a>Vue通信</h3><ul>
+<li>1.props和$emit</li>
+<li>2.中央事件总线 EventBus(基本不用)</li>
+<li>3.vuex(官方推荐状态管理器)</li>
+<li>4.$parent和$children</li>
+<li>当然还有一些其他办法，但基本不常用，或者用起来太复杂来。 介绍来通信的方式，还可以扩展说一下使用<br>场景，如何使用，注意事项之类的。</li>
+</ul>
+<h3 id="陈述http"><a href="#陈述http" class="headerlink" title="陈述http"></a>陈述http</h3><ul>
+<li>基本概念：</li>
+</ul>
+<p>HTTP，全称为 HyperText Transfer Protocol，即为超文本传输协议。是互联网应用最为广泛的一种网络协议<br>所有的 www 文件都必须遵守这个标准。</p>
+<ul>
+<li>http特性：</li>
+</ul>
+<p>HTTP 是无连接无状态的<br>HTTP 一般构建于 TCP/IP 协议之上，默认端口号是 80<br>HTTP 可以分为两个部分，即请求和响应。</p>
+<ul>
+<li>http请求：</li>
+</ul>
+<p>HTTP 定义了在与服务器交互的不同方式，最常用的方法有 4 种<br>分别是 GET，POST，PUT， DELETE。URL 全称为资源描述符，可以这么认为：一个 URL 地址<br>对应着一个网络上的资源，而 HTTP 中的 GET，POST，PUT，DELETE<br>就对应着对这个资源的查询，修改，增添，删除4个操作。</p>
+<p>HTTP 请求由 3 个部分构成，分别是：状态行，请求头(Request Header)，请求正文。</p>
+<p>HTTP 响应由 3 个部分构成，分别是：状态行，响应头(Response Header)，响应正文。</p>
+<p>HTTP 响应中包含一个状态码，用来表示服务器对客户端响应的结果。<br>状态码一般由3位构成：</p>
+<p>1xx : 表示请求已经接受了，继续处理。<br>2xx : 表示请求已经处理掉了。<br>3xx : 重定向。<br>4xx : 一般表示客户端有错误，请求无法实现。<br>5xx : 一般为服务器端的错误。</p>
+<ul>
+<li>比如常见的状态码：</li>
+</ul>
+<p>200 OK 客户端请求成功。<br>301 Moved Permanently 请求永久重定向。<br>302 Moved Temporarily 请求临时重定向。<br>304 Not Modified 文件未修改，可以直接使用缓存的文件。<br>400 Bad Request 由于客户端请求有语法错误，不能被服务器所理解。<br>401 Unauthorized 请求未经授权，无法访问。<br>403 Forbidden 服务器收到请求，但是拒绝提供服务。服务器通常会在响应正文中给出不提供服务的原因。<br>404 Not Found 请求的资源不存在，比如输入了错误的URL。<br>500 Internal Server Error 服务器发生不可预期的错误，导致无法完成客户端的请求。<br>503 Service Unavailable 服务器当前不能够处理客户端的请求，在一段时间之后，服务器可能会恢复正常。</p>
+<h3 id="Vue路由守卫有哪些，怎么设置，使用场景等"><a href="#Vue路由守卫有哪些，怎么设置，使用场景等" class="headerlink" title="Vue路由守卫有哪些，怎么设置，使用场景等"></a>Vue路由守卫有哪些，怎么设置，使用场景等</h3><ul>
+<li>常用的两个路由守卫：router.beforeEach 和 router.afterEach</li>
+</ul>
+<p>每个守卫方法接收三个参数：</p>
+<p>to: Route: 即将要进入的目标 路由对象</p>
+<p>from: Route: 当前导航正要离开的路由</p>
+<p>next: Function: 一定要调用该方法来 resolve 这个钩子。</p>
+<p>在项目中，一般在beforeEach这个钩子函数中进行路由跳转的一些信息判断。<br>判断是否登录，是否拿到对应的路由权限等等。</p>
+<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><ul>
+<li><p>通过ES6新特性Set()</p>
+<pre><code>var arr = [1, 2, 3, 1, 2]; var newArr= [...new Set(arr)]</code></pre></li>
+<li><p>双层 for 循环</p>
+<pre><code>function distinct(arr) {
+  for (let i=0, len=arr.length; i&lt;len; i++) {
+      for (let j=i+1; j&lt;len; j++) {
+          if (arr[i] == arr[j]) {
+              arr.splice(j, 1);
+              // splice 会改变数组长度，所以要将数组长度 len 和下标 j 减一
+              len--;
+              j--;
+          }
+      }
+  }
+  return arr;
+}
+思想: 双重 for 循环是比较笨拙的方法，它实现的原理很简单：先定义一个包含原始数组第一个元素的数组，然后遍历原始数组，将原始数组中的每个元素与新数组中的每个元素进行比对，如果不重复则添加到新数组中，最后返回新数组；因为它的时间复杂度是O(n^2)，如果数组长度很大，效率会很低。</code></pre></li>
+<li><p>Array.filter() 加 indexOf</p>
+<pre><code>function distinct(a, b) {
+  let arr = a.concat(b);
+  return arr.filter((item, index)=&gt; {
+      return arr.indexOf(item) === index
+  })
+}</code></pre><p>思想: 利用indexOf检测元素在数组中第一次出现的位置是否和元素现在的位置相等，如果不等则说明该元素是重复元素</p>
+</li>
+</ul>
+<h3 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h3><p>1.ES6引入来严格模式<br>    变量必须声明后在使用<br>    函数的参数不能有同名属性, 否则报错<br>    不能使用with语句 (说实话我基本没用过)<br>    不能对只读属性赋值, 否则报错<br>    不能使用前缀0表示八进制数,否则报错 (说实话我基本没用过)<br>    不能删除不可删除的数据, 否则报错<br>    不能删除变量delete prop, 会报错, 只能删除属性delete global[prop]<br>    eval不会在它的外层作用域引入变量<br>    eval和arguments不能被重新赋值<br>    arguments不会自动反映函数参数的变化<br>    不能使用arguments.caller (说实话我基本没用过)<br>    不能使用arguments.callee (说实话我基本没用过)<br>    禁止this指向全局对象<br>    不能使用fn.caller和fn.arguments获取函数调用的堆栈 (说实话我基本没用过)<br>    增加了保留字（比如protected、static和interface）</p>
+<p>2.关于let和const新增的变量声明</p>
+<p>3.变量的解构赋值</p>
+<p>4.字符串的扩展<br>    includes()：返回布尔值，表示是否找到了参数字符串。<br>    startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。<br>    endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</p>
+<p>5.数值的扩展<br>    Number.isFinite()用来检查一个数值是否为有限的（finite）。<br>    Number.isNaN()用来检查一个值是否为NaN。</p>
+<p>6.函数的扩展<br>    函数参数指定默认值</p>
+<p>7.数组的扩展<br>    扩展运算符</p>
+<p>8.对象的扩展<br>    对象的解构</p>
+<p>9.新增symbol数据类型</p>
+<p>10.Set 和 Map 数据结构<br>    ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。 Set 本身是一个构造函数，用来生成 Set 数据结构。</p>
+<pre><code>Map它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。</code></pre><p>11.Proxy<br>    Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问<br>    都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。<br>    Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”。<br>    Vue3.0使用了proxy</p>
+<p>12.Promise<br>    Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。<br>    特点是：<br>        对象的状态不受外界影响。<br>        一旦状态改变，就不会再变，任何时候都可以得到这个结果。</p>
+<p>13.async 函数<br>    async函数对 Generator 函数的区别：<br>    （1）内置执行器。<br>    Generator 函数的执行必须靠执行器，而async函数自带执行器。也就是说，async函数的执行，与普通函数一模一样，只要一行。<br>    （2）更好的语义。<br>    async和await，比起星号和yield，语义更清楚了。async表示函数里有异步操作，await表示紧跟在后面的表达式需要等待结果。<br>    （3）正常情况下，await命令后面是一个 Promise 对象。如果不是，会被转成一个立即resolve的 Promise 对象。<br>    （4）返回值是 Promise。<br>    async函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用then方法指定下一步的操作。</p>
+<p>14.Class<br>    class跟let、const一样：不存在变量提升、不能重复声明…<br>    ES6 的class可以看作只是一个语法糖，它的绝大部分功能<br>    ES5 都可以做到，新的class写法只是让对象原型的写法更加清晰、更像面向对象编程的语法而已。</p>
+<p>15.Module<br>    ES6 的模块自动采用严格模式，不管你有没有在模块头部加上”use strict”;。<br>    import和export命令以及export和export default的区别</p>
+<h3 id="Css3新特性"><a href="#Css3新特性" class="headerlink" title="Css3新特性"></a>Css3新特性</h3><p>1.过渡 transition<br>2.动画 animation<br>3.形状转换 transform<br>4.阴影 box-shadow<br>5.滤镜 Filter<br>6.颜色 rgba<br>7.栅格布局 gird<br>8.弹性布局 flex</p>
+<h3 id="说一说什么是跨域，怎么解决"><a href="#说一说什么是跨域，怎么解决" class="headerlink" title="说一说什么是跨域，怎么解决"></a>说一说什么是跨域，怎么解决</h3><pre><code>因为浏览器出于安全考虑，有同源策略。也就是说，如果协议、域名或者端口有一个不同就是跨域，Ajax 请求会失败。
+为来防止CSRF攻击
+1.JSONP
+    JSONP 的原理很简单，就是利用 &lt;script&gt; 标签没有跨域限制的漏洞。
+    通过 &lt;script&gt; 标签指向一个需要访问的地址并提供一个回调函数来接收数据当需要通讯时。
+    &lt;script src="http://domain/api?param1=a&amp;param2=b&amp;callback=jsonp"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        function jsonp(data) {
+            console.log(data)
+        }
+    &lt;/script&gt;
+    JSONP 使用简单且兼容性不错，但是只限于 get 请求。
+2.CORS
+    CORS 需要浏览器和后端同时支持。IE 8 和 9 需要通过 XDomainRequest 来实现。
+3.document.domain
+    该方式只能用于二级域名相同的情况下，比如 a.test.com 和 b.test.com 适用于该方式。
+
+    只需要给页面添加 document.domain = 'test.com' 表示二级域名都相同就可以实现跨域
+4.webpack配置proxyTable设置开发环境跨域
+5.nginx代理跨域
+6.iframe跨域
+7.postMessage
+    这种方式通常用于获取嵌入页面中的第三方页面数据。一个页面发送消息，另一个页面判断来源并接收消息
+</code></pre><h3 id="说一说前端性能优化方案"><a href="#说一说前端性能优化方案" class="headerlink" title="说一说前端性能优化方案"></a>说一说前端性能优化方案</h3><p>三个方面来说明前端性能优化<br>一： webapck优化与开启gzip压缩<br>    1.babel-loader用 include 或 exclude 来帮我们避免不必要的转译，不转译node_moudules中的js文件<br>    其次在缓存当前转译的js文件，设置loader: ‘babel-loader?cacheDirectory=true’<br>    2.文件采用按需加载等等<br>    3.具体的做法非常简单，只需要你在你的 request headers 中加上这么一句：<br>    accept-encoding:gzip<br>    4.图片优化，采用svg图片或者字体图标<br>    5.浏览器缓存机制，它又分为强缓存和协商缓存<br>二：本地存储——从 Cookie 到 Web Storage、IndexedDB<br>    说明一下SessionStorage和localStorage还有cookie的区别和优缺点<br>三：代码优化<br>    1.事件代理<br>    2.事件的节流和防抖<br>    3.页面的回流和重绘<br>    4.EventLoop事件循环机制<br>    5.代码优化等等</p>
+<h3 id="说一说SessionStorage和localStorage还有cookie"><a href="#说一说SessionStorage和localStorage还有cookie" class="headerlink" title="说一说SessionStorage和localStorage还有cookie"></a>说一说SessionStorage和localStorage还有cookie</h3><p>共同点：都是保存在浏览器端、且同源的<br>不同点：<br>    1.cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递。<br>    cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下<br>    sessionStorage和localStorage不会自动把数据发送给服务器，仅在本地保存。<br>    2.存储大小限制也不同，cookie数据不能超过4K，sessionStorage和localStorage可以达到5M<br>    3.sessionStorage：仅在当前浏览器窗口关闭之前有效；<br>    localStorage：始终有效，窗口或浏览器关闭也一直保存，本地存储，因此用作持久数据；<br>    cookie：只在设置的cookie过期时间之前有效，即使窗口关闭或浏览器关闭<br>    4.作用域不同<br>    sessionStorage：不在不同的浏览器窗口中共享，即使是同一个页面；<br>    localstorage：在所有同源窗口中都是共享的；也就是说只要浏览器不关闭，数据仍然存在<br>    cookie: 也是在所有同源窗口中都是共享的.也就是说只要浏览器不关闭，数据仍然存在</p>
+<h3 id="说说浏览器缓存"><a href="#说说浏览器缓存" class="headerlink" title="说说浏览器缓存"></a>说说浏览器缓存</h3><p>缓存可以减少网络 IO 消耗，提高访问速度。浏览器缓存是一种操作简单、效果显著的前端性能优化手段<br>很多时候，大家倾向于将浏览器缓存简单地理解为“HTTP 缓存”。<br>但事实上，浏览器缓存机制有四个方面，它们按照获取资源时请求的优先级依次排列如下：</p>
+<p>Memory Cache<br>Service Worker Cache<br>HTTP Cache<br>Push Cache</p>
+<p>缓存它又分为强缓存和协商缓存。优先级较高的是强缓存，在命中强缓存失败的情况下，才会走协商缓存<br>    实现强缓存，过去我们一直用 expires。<br>    当服务器返回响应时，在 Response Headers 中将过期时间写入 expires 字段，现在一般使用Cache-Control 两者同时出现使用Cache-Control </p>
+<pre><code>协商缓存，Last-Modified 是一个时间戳，如果我们启用了协商缓存，它会在首次请求时随着 Response Headers 返回：每次请求去判断这个时间戳是否发生变化。
+从而去决定你是304读取缓存还是给你返回最新的数据</code></pre><h3 id="Vue路由守卫有哪些，怎么设置，使用场景等-1"><a href="#Vue路由守卫有哪些，怎么设置，使用场景等-1" class="headerlink" title="Vue路由守卫有哪些，怎么设置，使用场景等"></a>Vue路由守卫有哪些，怎么设置，使用场景等</h3><ul>
+<li>常用的两个路由守卫：router.beforeEach 和 router.afterEach</li>
+</ul>
+<h3 id="webpack配置入口出口"><a href="#webpack配置入口出口" class="headerlink" title="webpack配置入口出口"></a>webpack配置入口出口</h3><pre><code>module.exports={
+    //入口文件的配置项
+    entry:{},
+    //出口文件的配置项
+    output:{},
+    //模块：例如解读CSS,图片如何转换，压缩
+    module:{},
+    //插件，用于生产模版和各项功能
+    plugins:[],
+    //配置webpack开发服务功能
+    devServer:{}
+}
+简单描述了一下这几个属性是干什么的。
+描述一下npm run dev / npm run build执行的是哪些文件
+通过配置proxyTable来达到开发环境跨域的问题，然后又可以扩展和他聊聊跨域的产生，如何跨域
+最后可以在聊聊webpack的优化，例如babel-loader的优化，gzip压缩等等
+</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -547,8 +716,8 @@ var p2 <span class="token operator">=</span> new Person1<span class="token punct
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                                    <span class="chip bg-color">随笔</span>
+                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                    <span class="chip bg-color">面试</span>
                                 </a>
                             
                         </div>
@@ -860,15 +1029,15 @@ var p2 <span class="token operator">=</span> new Person1<span class="token punct
                 <a href="/2020/02/29/6.1-mian-shi-ti/">
                     <div class="card-image">
                         
-                        <img src="/images/18.jpg" class="responsive-img" alt="flag后台管理完成100章">
+                        <img src="/images/19.jpg" class="responsive-img" alt="2020面试题总结">
                         
-                        <span class="card-title">flag后台管理完成100章</span>
+                        <span class="card-title">2020面试题总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            今天必须要把vue后台管理完成到100章
+                            前端必背面试题
                         
                     </div>
                     <div class="publish-info">
@@ -879,8 +1048,8 @@ var p2 <span class="token operator">=</span> new Person1<span class="token punct
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                                    随笔
+                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
+                                    面试
                                 </a>
                             
                             
@@ -891,8 +1060,8 @@ var p2 <span class="token operator">=</span> new Person1<span class="token punct
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
                 </div>
@@ -998,7 +1167,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.2k</span>&nbsp;字
+                class="white-color">8.3k</span>&nbsp;字
             
             
             
